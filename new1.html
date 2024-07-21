@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toodles</title>
+    <link rel="stylesheet" href="new1.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        /* Optional: Add media queries for responsiveness */
+        @media (max-width: 600px) {
+            form {
+                max-width: 100%;
+            }
+        }
+    body{
+        background-image:url("Background.jpg");
+        background-repeat: no-repeat;
+        background-attachment:scroll;
+        background-size: cover;
+    }
+    
+    </style>
+</head>
+<header>
+    <section class="nav-bar">
+        <img src="logo.png" alt="logo" style="width:100px;">
+        <div class="logo" style="align:left;">Toodles</div>
+        <ul class="menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">tours</a></li>
+            <li><a href="#">package</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">contact us</a></li>
+        </ul>
+        <button class="button" id="form-open">Login</button>
+        </div>
+    </section>
+</header>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><h1>To-Do</h1>
+    <h3></h3>
+
+    <form id="myForm">
+        <label for="datepickerCheckIn">Check-In Date:</label>
+        <input type="date" id="datepickerCheckIn">
+        <p id="demoCheckIn"></p>
+
+        <label for="datepickerCheckOut">Check-Out Date:</label>
+        <input type="date" id="datepickerCheckOut">
+        <p id="demoCheckOut"></p>
+
+        <label for="dest">Select your Destination:</label>
+        <select name="mydest" id="dest">
+            <option value="None" selected>None</option>
+            <option value="Manali">Manali</option>
+            <option value="Goa">Goa</option>
+            <option value="Mumbai">Mumbai</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var destination = document.getElementById('dest').value;
+            if (destination === 'Manali') {
+                window.location.href = 'manali.html';
+            } else if (destination === 'Goa') {
+                window.location.href = 'goa.html';
+            } else if (destination === 'Mumbai') {
+                window.location.href = 'mumbaii.html';
+            }
+        });
+    </script>
+    <section class="home">
+        <div class="form_container">
+          <i class="uil uil-times form_close"></i>
+          <!-- Login From -->
+          <div class="form login_form">
+            <form action="#">
+              <h2>Login</h2>
+  
+              <div class="input_box">
+                <input type="email" placeholder="Enter your email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Enter your password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+  
+              <div class="option_field">
+                <span class="checkbox">
+                  <input type="checkbox" id="check" />
+                  <label for="check">Remember me</label>
+                </span>
+                <a href="#" class="forgot_pw">Forgot password?</a>
+              </div>
+  
+              <button class="button">Login Now</button>
+  
+              <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+            </form>
+          </div>
+  
+          <!-- Signup From -->
+          <div class="form signup_form">
+            <form action="#">
+              <h2>Signup</h2>
+  
+              <div class="input_box">
+                <input type="email" placeholder="Enter your email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Create password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Confirm password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+  
+              <button class="button">Signup Now</button>
+  
+              <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+            </form>
+          </div>
+        </div>
+      </section>
+  
+      <script src="script.js"></script>
+      <div class="about-section">
+        <h1>About Us Page</h1>
+        <p>Some text about who we are and what we do.</p>
+        <p>Resize the browser window to see that this page is responsive by the way.</p>
+        <h2 style="text-align:center">Our Team</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="nitin.jpg" alt="Jane" style="width:300px; height: 325px;">
+            <div class="container">
+              <h2>Nitin Pandey</h2>
+              <p class="title">Html Developer</p>
+              
+              <p>nitin.22bcb7179@vitapstudent.ac.in</p>
+              <p><button class="buttonc">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="vedant.jpg" alt="Mike" style="width:300px; height: 325px;">
+            <div class="container">
+              <h2>Vendant Girawale</h2>
+              <p class="title">CSS Developer</p>
+              
+              <p>vedant.22bce7674@vitapstudent.ac.in</p>
+              <p><button class="buttonc">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="dhruv.jpg" alt="John" style="width:300px; height: 325px;">
+            <div class="container">
+              <h2>Dhruv Kumar Dubey</h2>
+              <p class="title">Java Developer</p>
+              
+              <p>dhruv.22bce8919@vitapstudent.ac.in</p>
+              <p><button class="buttonc">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <img src="adwika.jpg" alt="John" style="width:300px; height: 325px;">
+          <div class="container">
+            <h2>Advika Rajesh Menon</h2>
+            <p class="title">Web Designing</p>
+            
+            <p>advika.22bce9199@vitapstudent.ac.in</p>
+            <p><button class="buttonc">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+        <div class="card">
+          <img src="haritha.jpg" alt="John" style="width:300px; height: 325px;">
+          <div class="container">
+            <h2>Haritha M S</h2>
+            <p class="title">PhP Developer</p>
+            
+            <p>haritha.22bce7946@vitapstudent.ac.in</p>
+            <p><button class="buttonc">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script src="script.js"></script>
+  
+</body>
+</html>

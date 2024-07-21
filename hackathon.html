@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toodles</title>
+</head>
+<h2>Check-In</h2>
+    <input type="date" id="datepicker">
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("datepicker").onchange = function() {myFunction()};
+        function myFunction() {
+            var date = document.getElementById("datepicker").value;
+            document.getElementById("demo").innerHTML = "You selected: " + date;
+        }
+    </script>
+<h2>Check-Out</h2>
+    <input type="date" id="datepicker">
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("datepicker").onchange = function() {myFunction()};
+        function myFunction() {
+            var date = document.getElementById("datepicker").value;
+            document.getElementById("demo").innerHTML = "You selected: " + date;
+        }
+    </script>
+<form id="linkForm" action="#" method="GET" onsubmit="navigateToSelectedLink()">
+    <label for="selectLink">Select a link:</label>
+    <select id="selectLink" name="selectLink">
+        <option value="https://google.com/">Goa</option>
+        <option value=" http://127.0.0.1:5500/HTML/mumbaii.html">Manali</option>
+        <!-- Add more options as needed -->
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    function navigateToSelectedLink() {
+        var selectedLink = document.getElementById("selectLink").value;
+        window.location.href = selectedLink;
+        return false; // Prevents the form from actually submitting
+    }
+</script>
+
+<body>
+</body>
+</html>

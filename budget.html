@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Budget</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #282c35;
+            color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #3a3f4a;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        #total {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: none;
+            background-color: #61dafb;
+            color: #282c35;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: not-allowed;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function updateTotal() {
+            let total = 0;
+            $('input[type="checkbox"]:checked').each(function() {
+                total += parseFloat($(this).val());
+            });
+            $('#total').val(total.toFixed(2));
+        }
+
+        $(document).ready(function() {
+            $('input[type="checkbox"]').click(function() {
+                updateTotal();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Total Budget</h2>
+    <form>
+        <div>
+            <input type="checkbox" value="40">Gateway of India (Rs.40)
+        </div>
+        <div>
+            <input type="checkbox" value="100">Elephanta Caves (Rs.100)
+        </div>
+        <div>
+            <input type="checkbox" value="2000">Imagica (Rs.2000)
+        </div>
+        <div>
+            <input type="checkbox" value="40000">Hotel Taj Palace (Rs.40000)
+        </div>
+        <div>
+            <input type="checkbox" value="10000">Hotel Radisson Blu (Rs.10000)
+        </div>
+        <p></p>
+        <div>
+            <strong>
+                <label for="total">Total Budget:</label>
+                <input type="text" id="total" readonly>
+            </strong>
+        </div>
+    </form>
+</body>
+</html>
